@@ -27,8 +27,10 @@ function Bio() {
               }}
             />
             <p>
-              Welcome to the Room Service blog. We write about collaboration,
-              CRDT's, remote work, and anything else that makes us happy.
+              Welcome to the{' '}
+              <a href="https://www.roomservice.dev">Room Service</a> blog. We
+              write about collaboration, CRDT's, remote work, and anything else
+              that makes us happy.
             </p>
           </div>
         )
