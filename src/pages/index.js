@@ -13,32 +13,34 @@ class BlogIndex extends React.Component {
     const posts = data.allMdx.edges
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title="Room Service Blog"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
+      <>
+        <Layout location={this.props.location} title={siteTitle}>
+          <SEO
+            title="Room Service Blog"
+            keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+          />
 
-        <Bio />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          )
-        })}
-      </Layout>
+          <Bio />
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <div key={node.fields.slug}>
+                <h3
+                  style={{
+                    marginBottom: rhythm(1 / 4),
+                  }}
+                >
+                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                    {title}
+                  </Link>
+                </h3>
+                <small>{node.frontmatter.date}</small>
+                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              </div>
+            )
+          })}
+        </Layout>
+      </>
     )
   }
 }
